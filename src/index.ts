@@ -30,7 +30,7 @@ export const JSrunner: (code: string) => Props = (code: string): Props => {
       return output;
     }
     jsInterpreter.value !== undefined
-      ? (output.result = jsInterpreter.value.toString())
+      ? (output.result = JSON.stringify(jsInterpreter.value))
       : (output.message = "Undefined function or variable");
     return output;
   } catch (error) {
